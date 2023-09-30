@@ -1,8 +1,11 @@
-/*
-  Nota: si no usas el navbar, el siguiente código
-  no es necesario
-*/
 
 body {
     padding-top: 70px;
+    
+}
+table {
+    max-width: 80%;
+    /* Ancho máximo de la tabla */
+    border-collapse: collapse;
+    margin-top: 20px;
 }

@@ -4,7 +4,7 @@ Este archivo muestra un formulario llenado automáticamente (a partir del ID pas
  */
 
 if (!isset($_GET["id"])) {
-    exit();
+	exit();
 }
 
 $id = $_GET["id"];
@@ -13,18 +13,19 @@ $sentencia = $base_de_datos->prepare("SELECT id, nombre, edad FROM mascotas WHER
 $sentencia->execute([$id]);
 $mascota = $sentencia->fetchObject();
 if (!$mascota) {
-    #No existe
-    echo "¡No existe alguna mascota con ese ID!";
-    exit();
+	#No existe
+	echo "¡No existe alguna mascota con ese ID!";
+	exit();
 }
 
 #Si la mascota existe, se ejecuta esta parte del código
 ?>
-<?php include_once "encabezado.php"?>
-<div class="row">
-	<div class="col-12">
-		<h1>Editar</h1>
-		<form action="guardarDatosEditados.php" method="POST">
+<?php include_once "encabezado.php" ?>
+
+<div class="row mb-5">
+	<div class="col-12 mb-5">
+		<h1 class="mt-5 text-center">Editar</h1>
+		<form action="guardarDatosEditados.php" method="POST" class="mt-5 mb-5 p-4 border mx-auto" style="max-width: 400px;">
 			<input type="hidden" name="id" value="<?php echo $mascota->id; ?>">
 			<div class="form-group">
 				<label for="nombre">Nombre</label>
@@ -37,6 +38,10 @@ if (!$mascota) {
 			<button type="submit" class="btn btn-success">Guardar</button>
 			<a href="./listar.php" class="btn btn-warning">Volver</a>
 		</form>
+
+
+
 	</div>
 </div>
-<?php include_once "pie.php"?>
+
+<?php include_once "pie.php" ?>
