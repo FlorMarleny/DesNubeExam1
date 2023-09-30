@@ -1,15 +1,11 @@
 <?php
-/*
-Este archivo inserta los datos enviados a través de formulario.php
-*/
+
 ?>
 <?php
-#Salir si alguno de los datos no está presente
 if (!isset($_POST["nombre"]) || !isset($_POST["edad"])) {
     exit();
 }
 
-#Si todo va bien, se ejecuta esta parte del código...
 
 include_once "base_de_datos.php";
 $nombre = $_POST["nombre"];

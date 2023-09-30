@@ -85,19 +85,14 @@
             <th>Eliminar</th>
         </tr>
         <?php
-        // Incluir el archivo de conexión a la base de datos
         include_once('base_de_datos.php');
 
-        // Consulta SQL para seleccionar todos los registros de la tabla "mascotas"
         $sql = "SELECT * FROM mascotas";
 
-        // Ejecutar la consulta SQL
         $result = $conn->query($sql);
 
-        // Verificar si la consulta se ejecutó correctamente
         if ($result) {
             while ($row = $result->fetch_assoc()) {
-                // Acceder a los datos de cada fila y mostrarlos en una tabla HTML
                 echo "<tr>
                         <td>" . $row["id"] . "</td>
                         <td>" . $row["nombre"] . "</td>

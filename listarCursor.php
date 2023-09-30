@@ -1,8 +1,6 @@
 <?php
-// Incluir el archivo de conexión a la base de datos
 include_once('base_de_datos.php');
 
-// Verificar si la conexión se estableció correctamente
 if (!$base_de_datos) {
     die("Error en la conexión a la base de datos.");
 }
